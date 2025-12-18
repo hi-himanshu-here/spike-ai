@@ -1,0 +1,19 @@
+{
+  "include": ["server/**/*", "shared/**/*"],
+  "exclude": ["node_modules", "dist", "build", "**/*.test.ts"],
+  "compilerOptions": {
+    "incremental": true,
+    "noEmit": true,
+    "module": "ESNext",
+    "strict": true,
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@shared/*": ["./shared/*"]
+    }
+  }
+}

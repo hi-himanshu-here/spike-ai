@@ -1,0 +1,16 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+
+# IMPORTANT: Never commit credentials
+credentials.json
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+tmp/
