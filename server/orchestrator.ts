@@ -41,11 +41,11 @@ export class Orchestrator {
     try {
       log(`Processing query: "${request.query}"`, 'orchestrator');
 
-      // Step 1: Detect intent
+      
       const intent = await this.detectIntent(request.query, request.propertyId);
       log(`Detected intent: ${intent}`, 'orchestrator');
 
-      // Step 2: Route to appropriate agent(s)
+      
       let response: OrchestratorResponse;
 
       switch (intent) {
@@ -87,7 +87,7 @@ export class Orchestrator {
   }
 
   private async detectIntent(query: string, propertyId?: string): Promise<AgentType> {
-    // If propertyId is provided, assume analytics intent (or both)
+    
     const hasPropertyId = !!propertyId;
 
     const prompt = `You are an intent classifier. Determine if this question is about:
