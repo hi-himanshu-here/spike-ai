@@ -1,7 +1,3 @@
-/**
- * SEO Agent (Tier 2)
- * Handles SEO queries from Screaming Frog Google Sheets data
- */
 
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
@@ -65,16 +61,16 @@ export class SEOAgent {
         throw new Error('No spreadsheet ID provided. Set SEO_SPREADSHEET_ID or include in request.');
       }
 
-      // Step 1: Load Google Sheet data
+      
       const sheetData = await this.loadSpreadsheetData(spreadsheetId);
 
-      // Step 2: Use LLM to generate filtering/aggregation plan
+      
       const dataPlan = await this.inferDataPlan(query.query, sheetData);
 
-      // Step 3: Execute data operations
+      
       const results = await this.executeDataOperations(sheetData, dataPlan);
 
-      // Step 4: Generate explanation
+      
       const explanation = await this.generateExplanation(query.query, results);
 
       return {
