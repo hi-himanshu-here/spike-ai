@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# deploy.sh - Deployment script for Spike AI Builder Hackathon
-# Evaluator-safe, single-process, single-port startup
-
 set -e
 
 echo "==================================="
@@ -36,7 +33,7 @@ if [ -z "$LITELLM_API_KEY" ]; then
   echo "The server will start, but LLM-powered reasoning may fail."
 fi
 
-# Local Windows override (Spike evaluators will NOT set this)
+# Local Windows override 
 export PORT=3000
 
 echo "Starting server on port ${PORT}..."
