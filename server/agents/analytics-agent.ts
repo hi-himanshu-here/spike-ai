@@ -1,7 +1,4 @@
-/**
- * Analytics Agent (Tier 1)
- * Handles GA4 queries using Google Analytics Data API
- */
+
 
 import { google } from 'googleapis';
 import { litellm } from '../lib/litellm';
@@ -82,16 +79,16 @@ export class AnalyticsAgent {
     try {
       log(`Processing GA4 query for property ${query.propertyId}`, 'analytics-agent');
 
-      // Step 1: Use LLM to infer metrics, dimensions, and date ranges
+      
       const reportingPlan = await this.inferReportingPlan(query.query);
 
-      // Step 2: Validate against allowlist
+      
       this.validateFields(reportingPlan);
 
-      // Step 3: Execute GA4 query
+     
       const ga4Data = await this.executeGA4Query(query.propertyId, reportingPlan);
 
-      // Step 4: Generate natural-language explanation
+      
       const explanation = await this.generateExplanation(query.query, reportingPlan, ga4Data);
 
       return {
